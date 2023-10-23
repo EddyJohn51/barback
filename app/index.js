@@ -4,7 +4,7 @@ import {Stack, useRouter} from 'expo-router';
 
 import {SIZES, COLORS} from '../constants';
 
-import Header from './../components/home/header/Header';
+import {Header, PopularRecipes} from '../components/';
 
 const Home = () => {
     const router = useRouter();
@@ -23,7 +23,7 @@ const Home = () => {
 
             <ScrollView showsVerticalScrollIndicator={false}>
                 <View style={{flex: 1, padding: SIZES.medium }}>
-                    <Text>Popular Recipes</Text>
+                    <PopularRecipes />
                 </View>
             </ScrollView>
         </SafeAreaView>

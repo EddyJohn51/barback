@@ -1,4 +1,4 @@
-import Header from './home/Header';
+import Header from './home/header/Header';
 import PopularRecipes from './home/popular/PopularRecipes';
 
 export {
