@@ -1,5 +1,5 @@
 import {useState} from 'react';
-import {View, SafeAreaView, ScrollView, Text, useWindowDimensions} from 'react-native'
+import {View, SafeAreaView, ScrollView, Text, useWindowDimensions, StatusBar} from 'react-native'
 import {Stack, useRouter} from 'expo-router';
 import RenderHtml from 'react-native-render-html';
 
@@ -12,9 +12,11 @@ const Home = () => {
     const {width} = useWindowDimensions();
 
     return (
+
         <SafeAreaView style={{flex: 1, backgroundColor: COLORS.backgroundColor}}>
+            <StatusBar barStyle='dark-content' hidden = {false} backgroundColor={COLORS.primary} translucent={true}/>
             <Stack.Screen options={{
-                headerStyle: {backgroundColor: COLORS.backgroundColor},
+                headerStyle: {backgroundColor: COLORS.primary},
                 headerShadowVisible: false,
                 headerTitle: "",
             }} />
