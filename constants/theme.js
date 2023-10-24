@@ -17,4 +17,9 @@ const SIZES = {
     xxLarge: 32,
 };
 
-export {COLORS, SIZES};
+const FONTS = {
+    light: "KanitExtraLightItalic",
+    medium: "KanitMedium",
+};
+
+export {COLORS, SIZES, FONTS};
