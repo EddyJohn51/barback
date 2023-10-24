@@ -12,22 +12,25 @@ const Header = () =>  {
                 <Text style={styles.subtitleText}>Shake, Stir, Sip: Cocktails at Your Fingertips</Text>
             </View>
 
-            <View>
-                <TextInput 
-                    style={{backgroundColor: COLORS.primary}}
-                    placeholder='What Ingredient do you want to use?'
-                />
-            </View>
+            <View style={styles.searchContainer}>
+                <View style={styles.searchWrapper}>
+                    <TextInput 
+                        style={styles.searchbar}
+                        placeholder='What Ingredient do you want to use?'
+                        placeholderTextColor={COLORS.secondary}
+                    />
+                </View>
 
-            <View>
-                <TouchableOpacity>
+                <TouchableOpacity style={styles.searchButton}>
                     <Image
+                        style={styles.searchButtonImage}
                         source={icons.search}
                         resizeMode='contain'
                     />
                 </TouchableOpacity>
-                <TouchableOpacity>
+                <TouchableOpacity style={styles.searchButton}>
                     <Image
+                        style={styles.searchButtonImage}
                         source={icons.camera}
                         resizeMode='contain'
                     />
