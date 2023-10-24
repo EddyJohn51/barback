@@ -8,8 +8,8 @@ const Header = () =>  {
     return (
         <View>
             <View style={styles.container}>
-                <Text>BARBACK</Text>
-                <Text>Shake, Stir, Sip: Cocktails at Your Fingertips</Text>
+                <Text style={styles.titleText}>BARBACK</Text>
+                <Text style={styles.subtitleText}>Shake, Stir, Sip: Cocktails at Your Fingertips</Text>
             </View>
 
             <View>
