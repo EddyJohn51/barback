@@ -37,6 +37,10 @@ const Home = () => {
                         contentWidth={width}
                         source={{html: '<a target="_blank" href="https://icons8.com/icon/5376/camera">Camera</a> icon by <a target="_blank" href="https://icons8.com">Icons8</a>'}}
                     />
+                    <RenderHtml
+                        contentWidth={width}
+                        source={{html: '<a href="https://fonts.google.com/specimen/Kanit">Kanit</a> font from <a href="https://fonts.google.com/">Google Fonts</a'}}
+                    />
                 </View>
 
             </ScrollView>
