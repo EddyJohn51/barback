@@ -7,7 +7,7 @@ import {COLORS, icons} from '../../../constants';
 const Header = () =>  {
     return (
         <View>
-            <View>
+            <View style={styles.container}>
                 <Text>BARBACK</Text>
                 <Text>Shake, Stir, Sip: Cocktails at Your Fingertips</Text>
             </View>
