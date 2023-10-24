@@ -21,14 +21,22 @@ const Header = () =>  {
                     />
                 </View>
 
-                <TouchableOpacity style={styles.searchButton}>
+                <TouchableOpacity style={styles.searchButton}
+                    onPress={() => {
+                        alert("Search Pressed");
+                    }}
+                >
                     <Image
                         style={styles.searchButtonImage}
                         source={icons.search}
                         resizeMode='contain'
                     />
                 </TouchableOpacity>
-                <TouchableOpacity style={styles.searchButton}>
+                <TouchableOpacity style={styles.searchButton}
+                    onPress={() => {
+                        alert("Camera Pressed");
+                    }}
+                >
                     <Image
                         style={styles.searchButtonImage}
                         source={icons.camera}
