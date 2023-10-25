@@ -1,10 +1,13 @@
 import React from 'react';
 import {Text, TextInput, TouchableOpacity, View, Image} from 'react-native';
+import {useRouter} from 'expo-router'
 
 import styles from './header.style';
 import {COLORS, icons} from '../../../constants';
 
-const Header = () =>  {
+const Header = ({navigateCamera}) =>  {
+    const router = useRouter();
+
     return (
         <View>
             <View style={styles.container}>
@@ -33,9 +36,7 @@ const Header = () =>  {
                     />
                 </TouchableOpacity>
                 <TouchableOpacity style={styles.searchButton}
-                    onPress={() => {
-                        alert("Camera Pressed");
-                    }}
+                    onPress= {navigateCamera}
                 >
                     <Image
                         style={styles.searchButtonImage}

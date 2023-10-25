@@ -22,7 +22,11 @@ const Home = () => {
             }} />
 
             <View style={{backgroundColor: COLORS.backgroundColor}}>
-                <Header />
+                <Header
+                    navigateCamera={() => {
+                        router.push('/scanner');
+                    }}
+                />
             </View>
 
             <ScrollView showsVerticalScrollIndicator={false}>
