@@ -1,5 +1,5 @@
 import React, {useState, useEffect} from 'react';
-import {Text, SafeAreaView, TouchableOpacity, StyleSheet, useWindowDimensions} from 'react-native';
+import {View, Text, SafeAreaView, TouchableOpacity, StyleSheet, useWindowDimensions} from 'react-native';
 import {Stack, useRouter} from 'expo-router';
 import {BarCodeScanner} from 'expo-barcode-scanner'
 
@@ -14,10 +14,10 @@ const Scanner = () => {
 
     console.log(`${width} ${height}`);
 
-    const [x, setX] = useState((width/2) - 25);
-    const [y, setY] = useState((height/2) - 25);
-    const [boxWidth, setBoxWidth] = useState(50);
-    const [boxHeight, setBoxHeight] = useState(50);
+    const [x, setX] = useState((width / 2) - 50);
+    const [y, setY] = useState((width / 2) + 50);
+    const [boxWidth, setBoxWidth] = useState(100);
+    const [boxHeight, setBoxHeight] = useState(100);
 
 
     useEffect(() => {
@@ -29,8 +29,18 @@ const Scanner = () => {
         getBarCodeScannerPermissions();
     }, []);
 
-    const handleBarCodeScanned = ({type, data}) => {
+    const handleBarCodeScanned = ({type, data, bounds}) => {
         setScanned(true);
+
+        const {origin, size} = bounds;
+        console.log(origin);
+        console.log(size);
+
+        setX(origin.x);
+        setY(origin.y);
+        setBoxHeight(size.height);
+        setBoxWidth(size.width);
+
         alert(`Barcode of type ${type} scanned! Data is ${data}`);
     };
     
@@ -63,11 +73,24 @@ const Scanner = () => {
                 }}
             />
 
-        <BarCodeScanner 
-            onBarCodeScanned={scanned ? undefined : handleBarCodeScanned}
-            style={StyleSheet.absoluteFillObject}
-        />
-        {scanned && <TouchableOpacity onPress={() => setScanned(false)}><Text>Scan Again</Text></TouchableOpacity>}
+    
+            <BarCodeScanner 
+                onBarCodeScanned={scanned ? undefined : handleBarCodeScanned}
+                style={StyleSheet.absoluteFillObject}>
+                <View 
+                    style={{
+                        position: 'absolute',
+                        top: y,
+                        left: x,
+                        width:boxWidth,
+                        height:boxHeight,
+                        borderColor: '#00FF00',
+                        borderWidth: 2
+                    }}>
+
+                </View> 
+            </BarCodeScanner>
+            {scanned && <TouchableOpacity onPress={() => setScanned(false)}><Text>Scan Again</Text></TouchableOpacity>}
         </SafeAreaView>
     );
 }
