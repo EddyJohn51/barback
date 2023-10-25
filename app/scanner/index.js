@@ -12,8 +12,6 @@ const Scanner = () => {
 
     const {width, height} = useWindowDimensions();
 
-    console.log(`${width} ${height}`);
-
     const [x, setX] = useState((width / 2) - 50);
     const [y, setY] = useState((width / 2) + 50);
     const [boxWidth, setBoxWidth] = useState(100);
@@ -33,8 +31,6 @@ const Scanner = () => {
         setScanned(true);
 
         const {origin, size} = bounds;
-        console.log(origin);
-        console.log(size);
 
         setX(origin.x);
         setY(origin.y);
