@@ -1,5 +1,5 @@
 import React, {useState, useEffect} from 'react';
-import {Text, SafeAreaView, TouchableOpacity, StyleSheet} from 'react-native';
+import {Text, SafeAreaView, TouchableOpacity, StyleSheet, useWindowDimensions} from 'react-native';
 import {Stack, useRouter} from 'expo-router';
 import {BarCodeScanner} from 'expo-barcode-scanner'
 
@@ -9,6 +9,16 @@ const Scanner = () => {
     const router = useRouter();
     const [hasPermission, setHasPermission] = useState(null);
     const [scanned, setScanned] = useState(false);
+
+    const {width, height} = useWindowDimensions();
+
+    console.log(`${width} ${height}`);
+
+    const [x, setX] = useState((width/2) - 25);
+    const [y, setY] = useState((height/2) - 25);
+    const [boxWidth, setBoxWidth] = useState(50);
+    const [boxHeight, setBoxHeight] = useState(50);
+
 
     useEffect(() => {
         const getBarCodeScannerPermissions = async () => {
