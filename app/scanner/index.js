@@ -23,6 +23,17 @@ const Scanner = () => {
         setScanned(true);
         alert(`Barcode of type ${type} scanned! Data is ${data}`);
     };
+    
+    if(hasPermission === null) {
+        return (
+            <Text>Requesting Camera Permission</Text>
+        );
+    }
+    if(hasPermission === false) {
+        return (
+        <Text>Permission not granted.</Text>
+        );
+    }
 
     return (
         <SafeAreaView style={{flex: 1, backgroundColor: COLORS.primary}}>
