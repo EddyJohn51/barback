@@ -1,5 +1,5 @@
 import React, {useState, useEffect} from 'react';
-import {View, Text, SafeAreaView, TouchableOpacity} from 'react-native';
+import {Text, SafeAreaView, TouchableOpacity, StyleSheet} from 'react-native';
 import {Stack, useRouter} from 'expo-router';
 import {BarCodeScanner} from 'expo-barcode-scanner'
 
@@ -53,9 +53,11 @@ const Scanner = () => {
                 }}
             />
 
-            <View>
-                <Text>Will Be A Camera View</Text>
-            </View>
+        <BarCodeScanner 
+            onBarCodeScanned={scanned ? undefined : handleBarCodeScanned}
+            style={StyleSheet.absoluteFillObject}
+        />
+        {scanned && <TouchableOpacity onPress={() => setScanned(false)}><Text>Scan Again</Text></TouchableOpacity>}
         </SafeAreaView>
     );
 }
