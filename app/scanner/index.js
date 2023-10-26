@@ -38,7 +38,7 @@ const Scanner = () => {
         setBoxWidth(size.width);
 
         {/*alert(`Barcode of type ${type} scanned! Data is ${data}`);*/}
-        router.push(`/produt-info/${data}`);
+        router.push(`/product-info/${data}`);
     };
     
     if(hasPermission === null) {
