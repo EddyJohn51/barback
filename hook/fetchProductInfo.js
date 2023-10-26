@@ -1,6 +1,7 @@
 import {useState, useEffect} from 'react';
-import X_RAPIDAPI_KEY from '@env';
 const axios = require('axios');
+
+import {X_RAPIDAPI_KEY} from '@env';
 
 const fetchProductInfo = (upc) => {
     const [data, setData] = useState([]);
@@ -45,3 +46,5 @@ const fetchProductInfo = (upc) => {
 
     return {data, isLoading, error, refetch};
 }
+
+export default fetchProductInfo;
