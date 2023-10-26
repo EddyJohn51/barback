@@ -1,3 +1,4 @@
+import React from 'react';
 import {useCallback, useState} from 'react';
 import {Text, View} from 'react-native';
 import {Stack, useRouter, useLocalSearchParams} from 'expo-router';
@@ -19,3 +20,5 @@ const ProductInfo = () => {
         </View>
     );
 }
+
+export default ProductInfo;
