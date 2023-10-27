@@ -12,10 +12,7 @@ const fetchProductInfo = (upc) => {
 
     const options = {
         method: 'GET',
-        url: `https://api.upcdatabase.org/product/${upc}`,
-        headers: {
-            'Autorization': `Bearer ${auth_token}`
-        }
+        url: `https://api.upcitemdb.com/prod/trial/lookup?upc=${upc}`,
     };
 
     const fetchProductInfo = async () => {
@@ -24,7 +21,6 @@ const fetchProductInfo = (upc) => {
         try {
             const response = await axios.request(options);
             setData(response.data);
-            console.log(response);
             setIsLoading(false);
         } catch(error) {
             setError(error);
