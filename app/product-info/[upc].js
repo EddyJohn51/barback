@@ -12,8 +12,6 @@ const ProductInfo = () => {
 
     const {info, isLoading, error, refetchInfo} = fetchProductInfo(params.upc);
 
-    console.log(info);
-
     return (
         <View>
             <Text>Product info for {params.upc} </Text>
