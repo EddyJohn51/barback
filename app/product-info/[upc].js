@@ -26,13 +26,23 @@ const ProductInfo = () => {
             options= {{
                 headerStyle: {backgroundColor: COLORS.primary},
                 headerShadowVisible: false,
-                headerTitle: "",
+                headerTitle: '',
             }}
             />
 
             <>
                 <ScrollView showsVerticalScrollIndicator={false} refreshControl={<RefreshControl refreshing={refreshing} onRefresh={onRefresh} />}>
-
+                    {isLoading ? (
+                        <ActivityIndicator size='large' color={COLORS.secondary} />
+                    ) : error ? (
+                        <Text>Something Went Wrong!</Text>
+                    ) : data.length === 0 ? (
+                        <Text>No data to render</Text>
+                    ) : (
+                        <View style={{padding: SIZES.medium, paddingBottom: 100}}>
+                            
+                        </View>
+                    )}
                 </ScrollView>
             </>
         </SafeAreaView>
