@@ -1,7 +1,9 @@
 import {useState, useEffect} from 'react';
-const axios = require('axios');
+import  axios from 'axios';
+import {UPC_API_TOKEN} from '@env';
 
-import {X_RAPIDAPI_KEY} from '@env';
+const auth_token = UPC_API_TOKEN;
+console.log(auth_token);
 
 const fetchProductInfo = (upc) => {
     const [data, setData] = useState([]);
@@ -10,13 +12,9 @@ const fetchProductInfo = (upc) => {
 
     const options = {
         method: 'GET',
-        url: 'https://edamam-food-and-grocery-database.p.rapidapi.com/api/food-database/v2/parser',
-        params: {
-            'upc': upc,
-        },
+        url: `https://api.upcdatabase.org/product/${upc}`,
         headers: {
-            'X-RapidAPI-Key': X_RAPIDAPI_KEY,
-            'X-RapidAPI-Host': 'edamam-food-and-grocery-database.p.rapidapi.com'
+            'Autorization': `Bearer ${auth_token}`
         }
     };
 
@@ -25,7 +23,8 @@ const fetchProductInfo = (upc) => {
 
         try {
             const response = await axios.request(options);
-            setData(response.data.data);
+            setData(response.data);
+            console.log(response);
             setIsLoading(false);
         } catch(error) {
             setError(error);
@@ -44,7 +43,7 @@ const fetchProductInfo = (upc) => {
         fetchProductInfo();
     };
 
-    return {data, isLoading, error, refetch};
+    return {data, isLoading, error, refetchProductInfo};
 }
 
 export default fetchProductInfo;
