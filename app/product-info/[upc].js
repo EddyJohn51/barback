@@ -10,7 +10,7 @@ const ProductInfo = () => {
     const router = useRouter();
     const params = useLocalSearchParams();
 
-    const {info, isLoading, error, refetch} = fetchProductInfo(params.upc);
+    const {info, isLoading, error, refetchInfo} = fetchProductInfo(params.upc);
 
     console.log(info);
 
