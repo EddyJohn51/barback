@@ -4,17 +4,18 @@ import {Text, View} from 'react-native';
 import {Stack, useRouter, useLocalSearchParams} from 'expo-router';
 
 import {COLORS, SIZES} from '../../constants';
-import fetchProductInfo from '../../hook/fetchProductInfo';
+import useFetchProductInfo from '../../hook/fetchProductInfo';
 
 const ProductInfo = () => {
     const router = useRouter();
     const params = useLocalSearchParams();
 
-    const {info, isLoading, error, refetchInfo} = fetchProductInfo(params.upc);
+    const {data, isLoading, error, refetchProductInfo} = useFetchProductInfo(params.upc);
 
     return (
         <View>
-            <Text>Product info for {params.upc} </Text>
+            <Text>Product info for {params.upc}</Text>
+            <Text>{data.total}</Text>  
         </View>
     );
 }
