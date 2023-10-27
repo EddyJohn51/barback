@@ -1,11 +1,7 @@
 import {useState, useEffect} from 'react';
 import  axios from 'axios';
-import {UPC_API_TOKEN} from '@env';
 
-const auth_token = UPC_API_TOKEN;
-console.log(auth_token);
-
-const fetchProductInfo = (upc) => {
+const useFetchProductInfo = (upc) => {
     const [data, setData] = useState([]);
     const [isLoading, setIsLoading] = useState(false);
     const [error, setError] = useState(null);
@@ -15,7 +11,7 @@ const fetchProductInfo = (upc) => {
         url: `https://api.upcitemdb.com/prod/trial/lookup?upc=${upc}`,
     };
 
-    const fetchProductInfo = async () => {
+    const getProductInfo = async () => {
         setIsLoading(true);
 
         try {
@@ -31,15 +27,15 @@ const fetchProductInfo = (upc) => {
     }
 
     useEffect(() =>  {
-        fetchProductInfo();
+        getProductInfo();
     }, []);
 
     const refetchProductInfo = () => {
         setIsLoading(true);
-        fetchProductInfo();
+        getProductInfo();
     };
 
     return {data, isLoading, error, refetchProductInfo};
 }
 
-export default fetchProductInfo;
+export default useFetchProductInfo;
