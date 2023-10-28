@@ -11,7 +11,6 @@ const ProductInfo = () => {
     const params = useLocalSearchParams();
 
     const [refreshing, setRefreshing] = useState(false);
-
     const onRefresh = useCallback(() => {
         setRefreshing(true);
         refetchProductInfo();
@@ -41,7 +40,7 @@ const ProductInfo = () => {
                     ) : (
                         <View style={{padding: SIZES.medium, paddingBottom: 100}}>
                             <Text>{data.items[0].title}</Text>
-                            <Text>{data.items[0].description}</Text>
+                            <Text>{data.items[0].category}</Text>
                         </View>
                     )}
                 </ScrollView>
