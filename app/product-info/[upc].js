@@ -36,11 +36,12 @@ const ProductInfo = () => {
                         <ActivityIndicator size='large' color={COLORS.secondary} />
                     ) : error ? (
                         <Text>Something Went Wrong!</Text>
-                    ) : data.length === 0 ? (
+                    ) : data.length === 0 || data.items.length === 0 ? (
                         <Text>No data to render</Text>
                     ) : (
                         <View style={{padding: SIZES.medium, paddingBottom: 100}}>
-                            
+                            <Text>{data.items[0].title}</Text>
+                            <Text>{data.items[0].description}</Text>
                         </View>
                     )}
                 </ScrollView>
