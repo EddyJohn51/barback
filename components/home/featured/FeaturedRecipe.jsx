@@ -15,7 +15,7 @@ const FeaturedRecipe = ({recipe}) => {
         setRefreshing(false);
     }, []);
 
-    const tabs = ['Ingredients', 'Instructions'];
+    const tab = ['Ingredients', 'Instructions'];
     const {data, isLoading, error, refetchRecipeInfo} = useFetchRecipeInfo('search', recipe);
 
     return (
@@ -36,7 +36,9 @@ const FeaturedRecipe = ({recipe}) => {
                                 resizeMode='contain'
                             />
                             <Text>{data.drinks[0].strDrink}</Text>
-                            <RecipeTabs />
+                            <RecipeTabs 
+                                tabs={tab}
+                            />
                             {console.log(data.drinks[0])}
                         </View>
                     )}

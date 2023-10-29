@@ -1,12 +1,30 @@
 import React from 'react';
-import {View, Text} from 'react-native';
+import {View, Text, TouchableOpacity, FlatList} from 'react-native';
 
+import {COLORS, SIZES} from '../../constants';
 import styles from './RecipeTabs.style';
 
-const RecipeTabs = () => {
+const TabButton = ({name}) => (
+    <TouchableOpacity>
+        <Text>{name}</Text>
+    </TouchableOpacity>
+)
+
+const RecipeTabs = ({tabs}) => {
     return (
         <View>
-            <Text>RecipeTab</Text>
+            <FlatList
+                data={tabs}
+                renderItem={({item}) => (
+                    <TabButton
+                        name={item}
+                    />
+                )}
+                horizontal
+                showsHorizontalScrollIndicator={false}
+                keyExtractor={item=>item}
+                contentContainerStyle={{columnGap: SIZES.small}}
+            />
         </View>
     )
 }
