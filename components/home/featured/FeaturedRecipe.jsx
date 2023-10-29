@@ -7,15 +7,38 @@ import useFetchRecipeInfo from '../../../hook/fetchRecipeInfo'
 import RecipeTabs from '../../tabs/RecipeTabs'
 import styles from './FeaturedRecipe.style';
 
+const tab = ['Ingredients', 'Instructions'];
+
 const FeaturedRecipe = ({recipe}) => {
     const [refreshing, setRefreshing] = useState(false);
+    const [activeTab, setActiveTab] = useState(tab[0])
+
     const onRefresh = useCallback(() => {
         setRefreshing(true);
         refetchRecipeInfo();
         setRefreshing(false);
     }, []);
 
-    const tab = ['Ingredients', 'Instructions'];
+
+    const showTabInfo = () => {
+        switch(activeTab) {
+            case 'Ingredients':
+                return (
+                    <View>
+                        <Text>INGREDIENTS</Text>
+                    </View>
+                )
+            case 'Instructions':
+                    return (
+                        <View>
+                            <Text>INSTRUCTIONS</Text>
+                        </View>
+                    )
+            default:
+                break;
+        } 
+    }
+    
     const {data, isLoading, error, refetchRecipeInfo} = useFetchRecipeInfo('search', recipe);
 
     return (
@@ -38,7 +61,10 @@ const FeaturedRecipe = ({recipe}) => {
                             <Text>{data.drinks[0].strDrink}</Text>
                             <RecipeTabs 
                                 tabs={tab}
+                                activeTab={activeTab}
+                                setActiveTab={setActiveTab}
                             />
+                            {showTabInfo()}
                             {console.log(data.drinks[0])}
                         </View>
                     )}
