@@ -4,6 +4,7 @@ import {View, Text, Image, SafeAreaView, ScrollView, RefreshControl, ActivityInd
 import {COLORS, SIZES} from '../../../constants';
 import useFetchRecipeInfo from '../../../hook/fetchRecipeInfo'
 
+import RecipeTabs from '../../tabs/RecipeTabs'
 import styles from './FeaturedRecipe.style';
 
 const FeaturedRecipe = ({recipe}) => {
@@ -14,6 +15,7 @@ const FeaturedRecipe = ({recipe}) => {
         setRefreshing(false);
     }, []);
 
+    const tabs = ['Ingredients', 'Instructions'];
     const {data, isLoading, error, refetchRecipeInfo} = useFetchRecipeInfo('search', recipe);
 
     return (
@@ -34,6 +36,7 @@ const FeaturedRecipe = ({recipe}) => {
                                 resizeMode='contain'
                             />
                             <Text>{data.drinks[0].strDrink}</Text>
+                            <RecipeTabs />
                             {console.log(data.drinks[0])}
                         </View>
                     )}
