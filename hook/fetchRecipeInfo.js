@@ -8,10 +8,10 @@ const useFetchRecipeInfo = (endpoint, params) => {
 
     if(endpoint === 'search')
     {
-        apiUrl = `www.thecocktaildb.com/api/json/v1/1/search.php?s=${params}`
+        apiUrl = `https://www.thecocktaildb.com/api/json/v1/1/search.php?s=${params}`
     } else if(endpoint === 'filter')
     {
-        apiUrl = `www.thecocktaildb.com/api/json/v1/1/filter.php?i=${params}`
+        apiUrl = `https://www.thecocktaildb.com/api/json/v1/1/filter.php?i=${params}`
     }
 
     const options = {
