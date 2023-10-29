@@ -5,7 +5,7 @@ import RenderHtml from 'react-native-render-html';
 
 import {SIZES, COLORS} from '../constants';
 
-import {Header, PopularRecipes} from '../components/';
+import {Header, PopularRecipes, FeaturedRecipe} from '../components/';
 
 const Home = () => {
     const router = useRouter();
@@ -31,7 +31,8 @@ const Home = () => {
 
             <ScrollView showsVerticalScrollIndicator={false}>
                 <View style={{flex: 1, padding: SIZES.medium }}>
-                    <PopularRecipes />
+                    <FeaturedRecipe 
+                        recipe={recipes[Math.floor(Math.random() * recipes.length)]}/>
                 </View>
 
                 <View>
