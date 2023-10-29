@@ -11,6 +11,8 @@ const Home = () => {
     const router = useRouter();
     const {width} = useWindowDimensions();
 
+    const recipes = ['margarita', 'bloody mary', 'old-fashioned', 'martini'];
+    
     return (
 
         <SafeAreaView style={{flex: 1, backgroundColor: COLORS.backgroundColor}}>
