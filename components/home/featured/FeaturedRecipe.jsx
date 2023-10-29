@@ -18,8 +18,10 @@ const FeaturedRecipe = ({recipe}) => {
         refetchRecipeInfo();
         setRefreshing(false);
     }, []);
+    
+    const {data, isLoading, error, refetchRecipeInfo} = useFetchRecipeInfo('search', recipe);
 
-
+    
     const showTabInfo = () => {
         switch(activeTab) {
             case 'Ingredients':
@@ -31,15 +33,13 @@ const FeaturedRecipe = ({recipe}) => {
             case 'Instructions':
                     return (
                         <View>
-                            <Text>INSTRUCTIONS</Text>
+                            <Text>{data.drinks[0].strInstructions}</Text>
                         </View>
                     )
             default:
                 break;
         } 
     }
-    
-    const {data, isLoading, error, refetchRecipeInfo} = useFetchRecipeInfo('search', recipe);
 
     return (
         <SafeAreaView style={{flex: 1, backgroundColor: COLORS.primary}}>
