@@ -12,7 +12,7 @@ const Home = () => {
     const {width} = useWindowDimensions();
 
     const recipes = ['margarita', 'bloody mary', 'old-fashioned', 'martini'];
-    
+
     return (
 
         <SafeAreaView style={{flex: 1, backgroundColor: COLORS.backgroundColor}}>
@@ -33,8 +33,8 @@ const Home = () => {
 
             <ScrollView showsVerticalScrollIndicator={false}>
                 <View style={{flex: 1, padding: SIZES.medium }}>
-                    <FeaturedRecipe 
-                        recipe={recipes[Math.floor(Math.random() * recipes.length)]}/>
+                    <FeaturedRecipe
+                        recipe={recipes[(Math.floor(Math.random() * recipes.length))]}/>
                 </View>
 
                 <View>
