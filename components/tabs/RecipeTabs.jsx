@@ -4,13 +4,14 @@ import {View, Text, TouchableOpacity, FlatList} from 'react-native';
 import {COLORS, SIZES} from '../../constants';
 import styles from './RecipeTabs.style';
 
-const TabButton = ({name}) => (
-    <TouchableOpacity>
+const TabButton = ({name, activeTab, handleNewTab}) => (
+    <TouchableOpacity
+        onPress={handleNewTab}>
         <Text>{name}</Text>
     </TouchableOpacity>
 )
 
-const RecipeTabs = ({tabs}) => {
+const RecipeTabs = ({tabs, activeTab, setActiveTab}) => {
     return (
         <View>
             <FlatList
@@ -18,6 +19,8 @@ const RecipeTabs = ({tabs}) => {
                 renderItem={({item}) => (
                     <TabButton
                         name={item}
+                        activeTab={activeTab}
+                        handleNewTab={()=> setActiveTab(item)}
                     />
                 )}
                 horizontal
