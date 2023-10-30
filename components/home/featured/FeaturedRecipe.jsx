@@ -40,9 +40,6 @@ const FeaturedRecipe = ({recipe}) => {
                 measures.push('');
             }
         }
-
-        console.log(ingredients);
-        console.log(measures);
     };
 
     const showTabInfo = () => {
@@ -53,15 +50,21 @@ const FeaturedRecipe = ({recipe}) => {
                     <View>
                         {ingredients.map((item, index) => (
                             <View>
-                                <Text>{`- ${measures[index]}of ${item}`}</Text>
+                                <Text>{`- ${item} (${measures[index]})`}</Text>
                             </View>
                         ))}
                     </View>
                 )
             case 'Instructions':
+                const instructions = data.drinks[0].strInstructions.split('.')
+                instructions.splice(-1);
                     return (
                         <View>
-                            <Text>{data.drinks[0].strInstructions}</Text>
+                            {instructions.map((item, index) => (
+                                <View>
+                                    <Text>- {item}</Text>
+                                </View>
+                            ))}
                         </View>
                     )
             default:
