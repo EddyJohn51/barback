@@ -83,13 +83,15 @@ const FeaturedRecipe = ({recipe}) => {
                     ) : data.length === 0 ? (
                         <Text>No data to render</Text>
                     ) : (
-                        <View style={{padding: SIZES.medium, paddingBottom: 100}}>
-                            <Image
-                                src={data.drinks[0].strDrinkThumb}
-                                style={{width: 150, height: 150}}
-                                resizeMode='contain'
-                            />
-                            <Text>{data.drinks[0].strDrink}</Text>
+                        <View style={styles.featuredContainer}>
+                            <View style={styles.imageContainer}>
+                                <Image
+                                    src={data.drinks[0].strDrinkThumb}
+                                    style={styles.featuredImage}
+                                    resizeMode='contain'
+                                />
+                            </View>
+                            <Text style={styles.featuredName}>{data.drinks[0].strDrink}</Text>
                             <RecipeTabs 
                                 tabs={tab}
                                 activeTab={activeTab}
