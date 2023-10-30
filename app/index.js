@@ -11,7 +11,7 @@ const Home = () => {
     const router = useRouter();
     const {width} = useWindowDimensions();
 
-    const recipes = ['daiquiri', 'bloody_mary', 'old_fashioned', 'martini'];
+    const recipes = ['daiquiri', 'bloody_mary', 'old_fashioned', 'martini', 'margarita'];
 
     return (
 
