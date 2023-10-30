@@ -6,14 +6,16 @@ import styles from './RecipeTabs.style';
 
 const TabButton = ({name, activeTab, handleNewTab}) => (
     <TouchableOpacity
-        onPress={handleNewTab}>
-        <Text>{name}</Text>
+        onPress={handleNewTab}
+        style={styles.button(name, activeTab)}
+    >
+        <Text style={styles.buttonText(name, activeTab)}>{name}</Text>
     </TouchableOpacity>
 )
 
 const RecipeTabs = ({tabs, activeTab, setActiveTab}) => {
     return (
-        <View>
+        <View style={styles.container}>
             <FlatList
                 data={tabs}
                 renderItem={({item}) => (
