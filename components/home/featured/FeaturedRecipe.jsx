@@ -49,8 +49,11 @@ const FeaturedRecipe = ({recipe}) => {
                 return (
                     <View>
                         {ingredients.map((item, index) => (
-                            <View>
-                                <Text>{`- ${item} (${measures[index]})`}</Text>
+                            <View style={styles.contentContainer}>
+                                <View style={styles.contentWrapper}>
+                                    <View style={styles.contentDot}/>
+                                    <Text style={styles.contentText}>{`${item} (${measures[index]})`}</Text>
+                                </View>
                             </View>
                         ))}
                     </View>
@@ -59,10 +62,11 @@ const FeaturedRecipe = ({recipe}) => {
                 const instructions = data.drinks[0].strInstructions.split('.')
                 instructions.splice(-1);
                     return (
-                        <View>
+                        <View style={styles.contentContainer}>
                             {instructions.map((item, index) => (
-                                <View>
-                                    <Text>- {item}</Text>
+                                <View style={styles.contentWrapper}>
+                                    <View style={styles.contentDot}/>
+                                    <Text style={styles.contentText}>{item}</Text>
                                 </View>
                             ))}
                         </View>

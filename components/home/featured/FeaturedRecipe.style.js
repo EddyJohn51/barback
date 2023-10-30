@@ -19,6 +19,28 @@ const styles = StyleSheet.create({
         fontSize: 30,
         textAlign: 'center',
     },
+    contentContainer: {
+        marginVertical: SIZES.small,
+    },
+    contentWrapper: {
+        flexDirection: 'row',
+        justifyContent: 'flex-start',
+        alignItems: 'flex-start',
+        marginVertical: 0,
+    },
+    contentDot: {
+        width: 6,
+        height: 6,
+        borderRadius: 6,
+        backgroundColor: COLORS.secondary,
+        marginTop: 6,
+    },
+    contentText: {
+        fontSize: SIZES.medium,
+        color: COLORS.secondary,
+        fontFamily: FONTS.light,
+        marginLeft: SIZES.small,
+    }
 });
 
 export default styles;
