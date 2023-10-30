@@ -22,12 +22,24 @@ const FeaturedRecipe = ({recipe}) => {
     const {data, isLoading, error, refetchRecipeInfo} = useFetchRecipeInfo('search', recipe);
 
     var ingredients = new Map();
-    const ingredientFields = ['strIngredient1', 'strIngredient2', 'strIngredient3', 'strIngredient4', 'strIngredient5',
-                                'strIngredient6', 'strIngredient7', 'strIngredient8', 'strIngredient9', 'strIngredient10', 'strIngredient11',
-                                'strIngredient12', 'strIngredient13', 'strIngredient14', 'strIngredient15'];
 
     const getIngredients = () => {
-    }
+        for(let i = 1; i < 16; i++)
+        {
+            let ing = data.drinks[0][`strIngredient${i}`];
+            let measure = data.drinks[0][`strMeasure${i}`];
+
+            if(ing !== null && measure !== null)
+            {
+                ingredients.set(ing, measure);
+            }else if(ing !== null && measure === null)
+            {
+                ingredients.set(ing, '');
+            }
+        }
+
+        console.log(ingredients);
+    };
 
     const showTabInfo = () => {
         switch(activeTab) {
@@ -35,6 +47,7 @@ const FeaturedRecipe = ({recipe}) => {
                 return (
                     <View>
                         <Text>INGREDIENTS</Text>
+                        {getIngredients()}
                     </View>
                 )
             case 'Instructions':
@@ -72,7 +85,6 @@ const FeaturedRecipe = ({recipe}) => {
                                 setActiveTab={setActiveTab}
                             />
                             {showTabInfo()}
-                            {console.log(data.drinks[0])}
                         </View>
                     )}
                 </ScrollView>
