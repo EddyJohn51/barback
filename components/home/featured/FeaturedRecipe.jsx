@@ -47,14 +47,12 @@ const FeaturedRecipe = ({recipe}) => {
             case 'Ingredients':
                 getIngredients();
                 return (
-                    <View>
+                    <View style={styles.contentContainer}>
                         {ingredients.map((item, index) => (
-                            <View style={styles.contentContainer}>
-                                <View style={styles.contentWrapper}>
+                                <View style={styles.contentWrapper} key={item+index}>
                                     <View style={styles.contentDot}/>
                                     <Text style={styles.contentText}>{`${item} (${measures[index]})`}</Text>
                                 </View>
-                            </View>
                         ))}
                     </View>
                 )
@@ -64,7 +62,7 @@ const FeaturedRecipe = ({recipe}) => {
                     return (
                         <View style={styles.contentContainer}>
                             {instructions.map((item, index) => (
-                                <View style={styles.contentWrapper}>
+                                <View style={styles.contentWrapper} key={item+index}>
                                     <View style={styles.contentDot}/>
                                     <Text style={styles.contentText}>{item}</Text>
                                 </View>
