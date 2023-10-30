@@ -21,7 +21,8 @@ const FeaturedRecipe = ({recipe}) => {
     
     const {data, isLoading, error, refetchRecipeInfo} = useFetchRecipeInfo('search', recipe);
 
-    var ingredients = new Map();
+    var ingredients = []
+    var measures = []
 
     const getIngredients = () => {
         for(let i = 1; i < 16; i++)
@@ -31,23 +32,30 @@ const FeaturedRecipe = ({recipe}) => {
 
             if(ing !== null && measure !== null)
             {
-                ingredients.set(ing, measure);
+                ingredients.push(ing);
+                measures.push(measure);
             }else if(ing !== null && measure === null)
             {
-                ingredients.set(ing, '');
+                ingredients.push(ing);
+                measures.push('');
             }
         }
 
         console.log(ingredients);
+        console.log(measures);
     };
 
     const showTabInfo = () => {
         switch(activeTab) {
             case 'Ingredients':
+                getIngredients();
                 return (
                     <View>
-                        <Text>INGREDIENTS</Text>
-                        {getIngredients()}
+                        {ingredients.map((item, index) => (
+                            <View>
+                                <Text>{`- ${measures[index]}of ${item}`}</Text>
+                            </View>
+                        ))}
                     </View>
                 )
             case 'Instructions':
