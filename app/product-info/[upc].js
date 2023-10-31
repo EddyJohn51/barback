@@ -19,8 +19,19 @@ const ProductInfo = () => {
 
     const {data, isLoading, error, refetchProductInfo} = useFetchProductInfo(params.upc);
 
-    const temp = data.items[0].category.split(' > ')
-    const ing = temp[temp.length - 1];
+    const getIngredient = () => {
+        console.log(data.items[0].category);
+        const temp = data.items[0].category.split(' > ')
+        const temp_ing = temp[temp.length - 1];
+        return temp_ing;
+    }
+
+    const showIngredient = () => {
+        const ing = getIngredient();
+        return (
+            <Text>{ing}</Text>
+        )
+    }
 
     return (
         <SafeAreaView style={{flex: 1, backgroundColor: COLORS.primary}}>
@@ -43,8 +54,7 @@ const ProductInfo = () => {
                     ) : (
                         <View style={{padding: SIZES.medium, paddingBottom: 100}}>
                             <Text>{data.items[0].title}</Text>
-                            <Text>{data.items[0].category}</Text>
-                            {console.log(ing)}
+                            {showIngredient()}
                         </View>
                     )}
                 </ScrollView>
