@@ -19,6 +19,9 @@ const ProductInfo = () => {
 
     const {data, isLoading, error, refetchProductInfo} = useFetchProductInfo(params.upc);
 
+    const temp = data.items[0].category.split(' > ')
+    const ing = temp[temp.length - 1];
+
     return (
         <SafeAreaView style={{flex: 1, backgroundColor: COLORS.primary}}>
             <Stack.Screen
@@ -41,6 +44,7 @@ const ProductInfo = () => {
                         <View style={{padding: SIZES.medium, paddingBottom: 100}}>
                             <Text>{data.items[0].title}</Text>
                             <Text>{data.items[0].category}</Text>
+                            {console.log(ing)}
                         </View>
                     )}
                 </ScrollView>
