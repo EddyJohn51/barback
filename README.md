@@ -8,4 +8,4 @@ I had originally planned to implement a barcode scanner to find recipes (using U
 from the UPC code since the Cocktail DB doesn't search by brand name. In the future, I hope to figure out a way to make the barcode scanner work. For now, if you scan the
 barcode of a project, it will just display information available from the UPC API.
 
-#### Technologies Used
+## Technologies Used
