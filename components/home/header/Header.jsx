@@ -5,7 +5,7 @@ import {useRouter} from 'expo-router'
 import styles from './header.style';
 import {COLORS, icons} from '../../../constants';
 
-const Header = ({navigateCamera}) =>  {
+const Header = ({navigateCamera, searchTerm, setSearchTerm, handleClick}) =>  {
     const router = useRouter();
 
     return (
