@@ -36,3 +36,4 @@ To search for cocktail recipes, enter an ingredient into the search bar at the t
 "Tito's", search for Vodka). Then, select the recipe you want to make!
 
 The barcode scanner is not fully implemented, but if you scan an item, it will just display information about that project. It will *NOT* fetch cocktail information.
+The barcode scanner is **NOT COMPATIBLE** when using the app in a Web Browser.
