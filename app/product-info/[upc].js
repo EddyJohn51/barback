@@ -20,7 +20,6 @@ const ProductInfo = () => {
     const {data, isLoading, error, refetchProductInfo} = useFetchProductInfo(params.upc);
 
     const getIngredient = () => {
-        console.log(data);
         const temp = data.items[0].category.split(' > ')
         const temp_ing = temp[temp.length - 1];
         return temp_ing;
