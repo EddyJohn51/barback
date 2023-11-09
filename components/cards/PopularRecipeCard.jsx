@@ -4,7 +4,7 @@ import {View, Text, TouchableOpacity, Image} from 'react-native';
 import styles from './PopularRecipeCard.style';
 import {COLORS} from '../../constants';
 
-const PopularRecipeCard = () => {
+const PopularRecipeCard = (name, imageUrl) => {
     return (
         <TouchableOpacity style={styles.container}>
             <TouchableOpacity
@@ -12,14 +12,14 @@ const PopularRecipeCard = () => {
                 onPress={() => {alert("Popular Recipe Pressed")}}
             >
                 <Image 
-                    source={{uri: 'https://placehold.co/100x100/png'}}
+                    source={{uri: imageUrl}}
                     style={styles.imageItem}
                     resizeMode='contain'
                 />
             </TouchableOpacity>
 
             <View style={styles.textContainer}>
-                <Text style={styles.recipeName}>PopularRecipeCard</Text>
+                <Text style={styles.recipeName}>{name}</Text>
             </View>
         </TouchableOpacity>
     );
