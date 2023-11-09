@@ -10,6 +10,7 @@ import {Header, PopularRecipes, FeaturedRecipe} from '../components/';
 const Home = () => {
     const router = useRouter();
     const {width} = useWindowDimensions();
+    const [searchTerm, setSearchTerm] = useState();
 
     const recipes = ['daiquiri', 'bloody_mary', 'old_fashioned', 'martini', 'margarita'];
 
