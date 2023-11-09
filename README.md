@@ -9,3 +9,7 @@ from the UPC code since the Cocktail DB doesn't search by brand name. In the fut
 barcode of a project, it will just display information available from the UPC API.
 
 ## Technologies Used
+#### APIs
+* [The Cocktail DB API](https://www.thecocktaildb.com/api.php)
+* [UPCItemDB API](https://devs.upcitemdb.com/)
+
