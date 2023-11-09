@@ -13,3 +13,7 @@ barcode of a project, it will just display information available from the UPC AP
 * [The Cocktail DB API](https://www.thecocktaildb.com/api.php)
 * [UPCItemDB API](https://devs.upcitemdb.com/)
 
+#### Languages and Tools
+* React / React Native
+* Expo / Expo Router
+* Axios
