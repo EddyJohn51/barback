@@ -17,3 +17,15 @@ barcode of a project, it will just display information available from the UPC AP
 * React / React Native
 * Expo / Expo Router
 * Axios
+
+To Install and Use
+------
+1. Download / fork and clone into this GitHub repository.
+2. Run `npm install` to install dependencies (If `npm` is not recognized, make sure you have Node.js installed).
+3. While inside of the project directory, run `npx expo start` to start the Expo server.
+4. Open the application
+  * Web - Open the link given after starting the Expo server
+  * IOS/Android
+    1. Install the Expo Go app from the Google Play / App Store.
+    2. Make sure your mobile device is connected to the same network that your server is running on
+    3. Scan the QR Code provided after running the Expo server to access the project.
