@@ -21,13 +21,13 @@ const Header = ({navigateCamera, searchTerm, setSearchTerm, handleClick}) =>  {
                         style={styles.searchbar}
                         placeholder='What Ingredient do you want to use?'
                         placeholderTextColor={COLORS.secondary}
+                        value={searchTerm}
+                        onChangeText={(text) => {setSearchTerm(text)}}
                     />
                 </View>
 
                 <TouchableOpacity style={styles.searchButton}
-                    onPress={() => {
-                        alert("Search Pressed");
-                    }}
+                    onPress={handleClick}
                 >
                     <Image
                         style={styles.searchButtonImage}
