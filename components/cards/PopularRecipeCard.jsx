@@ -4,7 +4,7 @@ import {View, Text, TouchableOpacity, Image} from 'react-native';
 import styles from './PopularRecipeCard.style';
 import {COLORS} from '../../constants';
 
-const PopularRecipeCard = (name, imageUrl) => {
+const PopularRecipeCard = ({name, imageUrl}) => {
     return (
         <TouchableOpacity style={styles.container}>
             <TouchableOpacity

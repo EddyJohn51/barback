@@ -33,15 +33,13 @@ const RecipeSearch = () => {
         />
 
         <>
-            <Text>You made it to the search page!</Text>
-            <ScrollView showsVerticalScrollIndicator={false} refreshControl={<RefreshControl refreshing={refreshing} onRefresh={onRefresh} />}>
+            <View>
                 {isLoading ? (
                     <ActivityIndicator size='large' color={COLORS.secondary} />
                 ) : error ? (
                     <Text>Something Went Wrong!</Text>
                 ) : (
-                    <View style={{padding: SIZES.medium, paddingBottom: 100}}>
-                        <Text>Results Here</Text>
+                    <View style={{padding: SIZES.medium}}>
                         <FlatList
                             data={data.drinks}
                             renderItem={({item}) => (
@@ -51,12 +49,12 @@ const RecipeSearch = () => {
                                 />
                             )}
                             keyExtractor={(item) => item.idDrink}
-                            horizontal
+                            refreshControl={<RefreshControl refreshing={refreshing} onRefresh={onRefresh} />}
                         />
-                        {console.log(data.drinks)}
+                        {console.log((data.drinks))}
                     </View>
                 )}
-            </ScrollView>
+            </View>
         </>
         </SafeAreaView>
     )
