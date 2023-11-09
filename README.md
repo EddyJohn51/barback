@@ -29,3 +29,10 @@ To Install and Use
         1. Install the Expo Go app from the Google Play / App Store.
         2. Make sure your mobile device is connected to the same network that your server is running on
         3. Scan the QR Code provided after running the Expo server to access the project.
+
+Usage
+------
+To search for cocktail recipes, enter an ingredient into the search bar at the top of the app. *NOTE* You cannot use brand-names in the search bar (Instead of seraching for
+"Tito's", search for Vodka). Then, select the recipe you want to make!
+
+The barcode scanner is not fully implemented, but if you scan an item, it will just display information about that project. It will *NOT* fetch cocktail information.
