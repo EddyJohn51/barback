@@ -29,6 +29,11 @@ const Home = () => {
                     navigateCamera={() => {
                         router.push('/scanner');
                     }}
+                    searchTerm={searchTerm}
+                    setSearchTerm={setSearchTerm}
+                    handleClick={() => {
+                        router.push(`/search/${searchTerm}`);
+                    }}
                 />
             </View>
 
