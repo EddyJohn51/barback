@@ -25,7 +25,7 @@ const RecipeSearch = () => {
     const navigateSearch = () => {
         router.push(`recipe-info/${data.drinks}`);
     }
-    
+
     return (
         <SafeAreaView style={{flex: 1, backgroundColor: COLORS.primary}}>
         <Stack.Screen
@@ -50,6 +50,7 @@ const RecipeSearch = () => {
                                 <PopularRecipeCard
                                     name={item.strDrink}
                                     imageUrl={item.strDrinkThumb}
+                                    navigateSearch={navigateSearch}
                                 />
                             )}
                             keyExtractor={(item) => item.idDrink}
