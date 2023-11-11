@@ -51,7 +51,6 @@ const RecipeSearch = () => {
                             keyExtractor={(item) => item.idDrink}
                             refreshControl={<RefreshControl refreshing={refreshing} onRefresh={onRefresh} />}
                         />
-                        {console.log((data.drinks))}
                     </View>
                 )}
             </View>
