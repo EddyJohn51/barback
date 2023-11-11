@@ -6,9 +6,11 @@ const useFetchRecipeId = (id) => {
     const [isLoading, setIsLoading] = useState(false);
     const [error, setError] = useState(null);
 
+    const idUrl = `https://www.thecocktaildb.com/api/json/v1/1/lookup.php?i=${id}`
+
     const options = {
         method: 'GET',
-        url: `www.thecocktaildb.com/api/json/v1/1/lookup.php?i=${id}`,
+        url: idUrl,
     };
 
     const getRecipeId = async () => {
