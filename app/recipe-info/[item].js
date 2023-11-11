@@ -4,8 +4,7 @@ import {Text, View, ScrollView, ActivityIndicator, RefreshControl, SafeAreaView}
 import {Stack, useRouter, useLocalSearchParams} from 'expo-router';
 
 import {COLORS, SIZES} from '../../constants';
-import useFetchProductInfo from '../../hook/fetchProductInfo';
-
+import {FeaturedRecipe} from '../../components';
 const RecipeInfo = () => {
     const router = useRouter();
     const params = useLocalSearchParams();
@@ -21,8 +20,11 @@ const RecipeInfo = () => {
             />
 
             <>
-                <Text>RECIPE INFO</Text>
+                <FeaturedRecipe
+                    recipe={params.item}
+                />
             </>
+            
         </SafeAreaView>
     );
 }
