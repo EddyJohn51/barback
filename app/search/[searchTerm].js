@@ -22,6 +22,10 @@ const RecipeSearch = () => {
 
     const {data, isLoading, error, refetchRecipeInfo} = useFetchRecipeInfo('search', params.searchTerm);
 
+    const navigateSearch = () => {
+        router.push(`recipe-info/${data.drinks}`);
+    }
+    
     return (
         <SafeAreaView style={{flex: 1, backgroundColor: COLORS.primary}}>
         <Stack.Screen
