@@ -22,10 +22,6 @@ const RecipeSearch = () => {
 
     const {data, isLoading, error, refetchRecipeInfo} = useFetchRecipeInfo('search', params.searchTerm);
 
-    const navigateSearch = () => {
-        router.push(`recipe-info/${data.drinks}`);
-    }
-
     return (
         <SafeAreaView style={{flex: 1, backgroundColor: COLORS.primary}}>
         <Stack.Screen
@@ -50,7 +46,9 @@ const RecipeSearch = () => {
                                 <PopularRecipeCard
                                     name={item.strDrink}
                                     imageUrl={item.strDrinkThumb}
-                                    navigateSearch={navigateSearch}
+                                    navigateSearch={() => {
+                                        router.push(`recipe-info/${item.idDrink}`);
+                                    }}
                                 />
                             )}
                             keyExtractor={(item) => item.idDrink}
