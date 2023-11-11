@@ -23,7 +23,7 @@ const RecipeInfo = () => {
                 <FeaturedRecipe
                     recipe={params.item}
                 />
-            u7</>
+            </>
 
         </SafeAreaView>
     );
