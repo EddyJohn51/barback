@@ -47,7 +47,7 @@ const RecipeSearch = () => {
                                     name={item.strDrink}
                                     imageUrl={item.strDrinkThumb}
                                     navigateSearch={() => {
-                                        router.push(`recipe-info/${item.idDrink}`);
+                                        router.push(`recipe-info/${item.strDrink}`);
                                     }}
                                 />
                             )}
