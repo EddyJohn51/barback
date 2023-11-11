@@ -4,12 +4,13 @@ import {View, Text, TouchableOpacity, Image} from 'react-native';
 import styles from './PopularRecipeCard.style';
 import {COLORS} from '../../constants';
 
-const PopularRecipeCard = ({name, imageUrl}) => {
+const PopularRecipeCard = ({name, imageUrl, navigateSearch}) => {
     return (
-        <TouchableOpacity style={styles.container}>
+        <TouchableOpacity style={styles.container}
+            onPress={navigateSearch}
+        >
             <TouchableOpacity
                 style={styles.imageContainer}
-                onPress={() => {alert("Popular Recipe Pressed")}}
             >
                 <Image 
                     source={{uri: imageUrl}}
