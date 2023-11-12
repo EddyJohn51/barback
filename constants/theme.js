@@ -1,11 +1,9 @@
 const COLORS = {
-    primary: '#EB5E55',
-    secondary: '#0D1821',
-    tertiary: '#2CA58D',
+    primary: '#E4D5B7',
+    secondary: '#6388EF',
+    tertiary: '#EFCA63',
 
-    accent: '#B39C4D',
-
-    backgroundColor: '#E0E1DD;'
+    textColor: '#000000',
 };
 
 const SIZES = {

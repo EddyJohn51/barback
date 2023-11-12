@@ -9,12 +9,12 @@ const styles = StyleSheet.create({
     },
     titleText: {
         fontFamily: FONTS.medium,
-        color: COLORS.secondary,
+        color: COLORS.textColor,
         fontSize: SIZES.xxLarge * 1.5,
     },
     subtitleText: {
         fontFamily: FONTS.light,
-        color: COLORS.secondary,
+        color: COLORS.textColor,
         fontSize: SIZES.small * 1.5,
     },
     searchContainer: {
