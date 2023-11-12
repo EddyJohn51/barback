@@ -31,7 +31,7 @@ const styles = StyleSheet.create({
     recipeName: {
         fontSize: SIZES.large,
         fontFamily: FONTS.medium,
-        color: COLORS.secondary,
+        color: COLORS.textColor,
     },
 });
 

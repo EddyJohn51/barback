@@ -11,14 +11,14 @@ const styles = StyleSheet.create({
     button: (name, activeTab) => ({
         paddingVertical: SIZES.medium,
         paddingHorizontal: SIZES.xLarge,
-        backgroundColor: name === activeTab ? COLORS.accent : COLORS.secondary,
+        backgroundColor: name === activeTab ? COLORS.secondary : COLORS.tertiary,
         borderRadius: SIZES.medium,
         marginLeft: 2,
     }),
     buttonText: (name, activeTab) => ({
         fontFamily: FONTS.light,
         fontSize: SIZES.medium,
-        color: name === activeTab ? COLORS.secondary : COLORS.accent,
+        color: COLORS.textColor,
     }),
 });
 

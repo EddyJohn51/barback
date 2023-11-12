@@ -32,12 +32,12 @@ const styles = StyleSheet.create({
         width: 6,
         height: 6,
         borderRadius: 6,
-        backgroundColor: COLORS.secondary,
+        backgroundColor: COLORS.textColor,
         marginTop: 6,
     },
     contentText: {
         fontSize: SIZES.medium,
-        color: COLORS.secondary,
+        color: COLORS.textColor,
         fontFamily: FONTS.light,
         marginLeft: SIZES.small,
     }
